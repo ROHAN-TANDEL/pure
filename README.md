@@ -1,4 +1,4 @@
-# pure
+# PURE JS CSS3 & HTML5 - LOADER
 ## ################pure html css and js#################
 ## Features
 ### You can add various functionalities such as
