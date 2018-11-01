@@ -1,5 +1,12 @@
 # pure
-pure html css and js
+## ################pure html css and js#################
+## Features
+### You can add various functionalities such as
+### add stop loading button
+### can be used for ajax calls
+### helpful for using/creating bundles like .exe files
+### avoid unneccesarry load on code
+
 ```
 <!DOCTYPE html>
 <html>
