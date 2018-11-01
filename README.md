@@ -19,67 +19,67 @@
 
 <style>
 .loader {
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
   border: 16px solid #f3f3f3;
   border-radius: 50%;
   border-top: 16px solid #3498db;
-  width: 120px;
   height: 120px;
-  -webkit-animation: spin 2s linear infinite; /* Safari */
-  animation: spin 2s linear infinite;
+  width: 120px;
 }
+
 /* Safari */
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
   100% { -webkit-transform: rotate(360deg); }
 }
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 h1, h3, .loader, button {
-  position: relative;
   color: green;
+  position: relative;
 }
 body {
   background-color: lightblue;
 }
 button {
   background-color: lightgreen;
-  box-shadow: 0 0 0;
   border: solid 1px grey;
+  box-shadow: 0 0 0;
 }
+
 /*/ start -- popup styling/*/
 .popupbox {
-  width: 25%;
   background: floralwhite;
   box-shadow: 0px 0px 10px 10px #b9b0a9;
+  left: 32%;
+  padding: 5%;
+  position: absolute;
+  top: 15%;
+  width: 25%;
+  z-index: 12;
 }
 .popup-close {
   padding: 1% 10%;
 }
 /*/ end -- popup styling/*/
+
 /*----------start---overlay for popup----------*/
 #overlay {
-    position: fixed;
-    display: none;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     background-color: rgba(0,0,0,0.5);
-    z-index: 2;
+    bottom: 0;
     cursor: pointer;
-}
-#text{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 50px;
-    color: white;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 2;
 }
 /*----------end---overlay for popup----------*/
 </style>
@@ -109,6 +109,7 @@ button {
   </div>
 </div>
 <script>
+
 /*------------start----loader Js----------------------*/
 var myVar;
 /*---------------start loader----------------*/
@@ -117,7 +118,9 @@ function loadingButton() {
     hideCallPopUp();
     showLoader();
     setTimeout(function(){ success(); }, 3000);
+
 }
+
 function hideLoader() {
   console.log('hideLoader --- --- --');
   document.getElementById("loader").style.display = "none";
@@ -126,6 +129,7 @@ function hideLoader() {
   hideCallPopUp();
   off();//show overlay function 
 }
+
 function success() {
   console.log('success --- --- --');
   hideLoader();
@@ -133,6 +137,7 @@ function success() {
   document.getElementById("loading-success").style.display = "block"; 
   showCallPopUp();
 }
+
 function showLoader() {
   console.log('showLoader --- --- --');
   document.getElementById("loader-button").style.display = "none";
@@ -141,16 +146,19 @@ function showLoader() {
   document.getElementById("loader").style.display = "block";
 }
 /*----------------end loader------------------*/
+
 /*------------------start popup---------------*/
 function showCallPopUp() {
   on();//show overlay function
   document.getElementById("popupbox").style.display = "block";
 }
+
 function hideCallPopUp() {
   off();//hide overlay function
   document.getElementById("popupbox").style.display = "none";
 }
 /*---------------stop popup--------------*/
+
 /*---------------start overlay-----------*/
 /*show overlay*/
 function on() {
